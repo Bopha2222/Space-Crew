@@ -1,6 +1,6 @@
 # Space-Crew
 Group project for DSA year 2. Game play "Space crew"
-This a our Data Structure & Algorithm group project "Space Crew".
+This a our Data Structure & Algorithm group project.
 
 Each member will have to write code based on thier assigned rules.
 As for the folder :
