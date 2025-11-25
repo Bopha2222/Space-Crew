@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Space-Crew
 Group project for DSA year 2. Game play "Space crew"
 This a our Data Structure & Algorithm group project "Space Crew".
@@ -9,3 +10,7 @@ Documents: Any node or text for the group.
 GameAssets: Stores files that loaded by the game(images,data files,JSON...)
 Include: Stores all .hpp files.
 SourceCode: stores all .cpp files.
+=======
+This a our Data Structure & Algorithm group project "Space Crew".
+
+>>>>>>> 2c5dffdcc0c7c929345ef594ee367245fd314a73
