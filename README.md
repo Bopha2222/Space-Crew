@@ -1,5 +1,5 @@
 # Space-Crew
-Group project for DSA year 2. Game play "Space crew"
+Group project for DSA year 2. Game play "Space crew".
 This is the Github reposity for our project.
 Each member will have to write code based on thier assigned rules.
 
