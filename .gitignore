@@ -1,0 +1,28 @@
+# Build files
+*.o
+*.obj
+*.exe
+*.out
+*.dll
+*.so
+*.a
+
+# CMake
+/CMakeFiles/
+/CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Visual Studio / VSCode
+.vscode/
+.vs/
+*.sln
+*.vcxproj*
+*.ipch
+
+# Logs
+*.log
+
+# Mac / Linux system files
+.DS_Store
+*.swp
