@@ -1,8 +1,8 @@
 # Space-Crew
 Group project for DSA year 2. Game play "Space crew"
-This a our Data Structure & Algorithm group project.
-
+This is the Github reposity for our project.
 Each member will have to write code based on thier assigned rules.
+
 As for the folder :
 ## 📁 Project Structure
 Space-Crew/
