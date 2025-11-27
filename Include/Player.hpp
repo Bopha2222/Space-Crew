@@ -1,7 +1,7 @@
-#ifndef PLAYER_HPP
-#define PLAYER_HPP
 #include <iostream>
 #include <string>
+#ifndef PLAYER_HPP
+#define PLAYER_HPP
 using namespace std;
 
 enum Role { CREWMATE, IMPOSTOR };
@@ -25,6 +25,8 @@ private:
     Role role;
     bool alive;
     int tasksCompleted;
+    int level;
+    int energy;
     
 
 };
