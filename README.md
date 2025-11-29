@@ -3,8 +3,7 @@ Group project for DSA year 2. Game play "Space crew".
 This is the Github reposity for our project.
 Each member will have to write code based on thier assigned rules.
 
-As for the folder :
-## 📁 Project Structure
+## 📁 Project Structure : 
 Space-Crew/
 │── SourceCode: for the ".cpp" implementation files
 │── Include:for all ".hpp" header files
@@ -15,5 +14,7 @@ Space-Crew/
 │── .gitignore
 │── update.bat # auto-update script
 
+## Group note : 
+Everyone will code and their works into each branches themselve. The main branch is untouched unless the final porlised code.
 
 
