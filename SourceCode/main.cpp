@@ -1,7 +1,27 @@
 #include "Player.hpp"
 #include <iostream>
+#include <fstream>
+#include <string>
 using namespace std;
 int main() {
+    /*string player;
+    int size;
+    fstream f1;
+    f1.open("Player.hpp",ios::in);
+    f1.open("Player.cpp",ios::in);
+    while(!f1.eof()){
+        f1>>player;
+        cout<<player<<",";
+    }
+
+   f1.close();
+   cout << "[";
+    for (size_t i = 0; i < player.size(); ++i) {
+        if (i) cout << ", ";
+        cout << player[i];
+    }
+    cout << "]\n";
+    }*/
     Player p1("Alice");
     Player p2("Bob");
 
