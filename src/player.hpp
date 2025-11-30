@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include "mission.hpp"
 using namespace std;
 
 class Player {
@@ -9,28 +10,49 @@ public:
     bool taskCompleted;
     bool isHuman;
 
-    Player() {} // default constructor needed for array
+    Mission assignedMissions[5]; // max 5 missions per player
+    int missionCount;
 
+    // Default constructor
+    Player() {
+        name = "";
+        taskCompleted = false;
+        isHuman = true;
+        missionCount = 0;
+    }
+
+    // Parameterized constructor
     Player(string playerName, bool human) {
         name = playerName;
         taskCompleted = false;
         isHuman = human;
+        missionCount = 0;
     }
 
-    void performTask() {
-        if (isHuman)
-            cout << name << " is performing a task..." << endl;
-        else
-            cout << name << " (bot) is performing a task..." << endl;
-        taskCompleted = true;
+    // Assign a mission to player
+    void assignMission(Mission m) {
+        if (missionCount < 5) {
+            assignedMissions[missionCount] = m;
+            missionCount++;
+        }
     }
 
-    void showStatus() {
-        cout << name << " - Task completed: "
-             << (taskCompleted ? "Yes" : "No") << endl;
+    // Display all missions for this player
+    void showMissions() {
+        cout << "\nMissions for " << name << ":\n";
+        for (int i = 0; i < missionCount; i++) {
+            cout << i + 1 << ". " << assignedMissions[i].name
+                 << " - " << assignedMissions[i].description
+                 << " | Completed: " << (assignedMissions[i].isCompleted ? "YES" : "NO")
+                 << endl;
+        }
     }
 
-    string getName() {
-        return name;
+    // Complete a mission by index
+    void completeMission(int index) {
+        if (index >= 0 && index < missionCount) {
+            assignedMissions[index].isCompleted = true;
+            cout << name << " completed mission: " << assignedMissions[index].name << "!\n";
+        }
     }
 };
