@@ -1,5 +1,5 @@
 #pragma once
-#include "Player.hpp"
+#include "player.hpp"
 #include <iostream>
 using namespace std;
 
