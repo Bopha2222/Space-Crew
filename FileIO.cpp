@@ -4,8 +4,8 @@
 #include <iostream>
 using namespace std;
 
-// Player syate
-void FileIO::savePlayers(const vector<Player> &players)
+// Player state
+void savePlayers( Player players[],int  amountofplayer)
 {
     ofstream file("players.csv");
     if (!file)
@@ -16,31 +16,30 @@ void FileIO::savePlayers(const vector<Player> &players)
 
     file << "id,name,role,alive\n";
 
-    for (auto &p : players)
+    for (int i=0;i<amountofplayer;i++)
     {
-        file << p.id << ","
-             << p.name << ","
-             << p.role << ","
-             << p.alive << "\n";
+        file << players[i].id << ","
+             << players[i].name << ","
+             << players[i].role << ","
+             << players[i].alive << "\n";
     }
 
     cout << "Players saved successfully!\n";
 }
 
-vector<Player> FileIO::loadPlayers()
+int loadPlayers(Player players[],int maxplayer)
 {
-    vector<Player> players;
     ifstream file("players.csv");
     if (!file)
     {
         cout << "Error loading players!\n";
-        return players;
+        return 0;
     }
 
     string line;
     getline(file, line); // skip header
-
-    while (getline(file, line))
+   int  count=0;
+    while (getline(file, line)&& count<maxplayer)
     {
         stringstream ss(line);
         string id, name, role, alive;
@@ -49,15 +48,20 @@ vector<Player> FileIO::loadPlayers()
         getline(ss, name, ',');
         getline(ss, role, ',');
         getline(ss, alive, ',');
+        players[count].id    = stoi(id);
+        players[count].name  = name;
+        players[count].role  = role;
+        players[count].alive = (alive == "1");
 
-        players.emplace_back(stoi(id), name, role, alive == "1");
+        count++;
+      
     }
 
     cout << "Players loaded successfully!\n";
-    return players;
+    return count;
 }
 
-void FileIO::saveTasks(const vector<Task> &tasks)
+void saveTasks(Task tasks[], int taskcount)
 {
     ofstream file("tasks.csv");
     if (!file)
@@ -68,29 +72,29 @@ void FileIO::saveTasks(const vector<Task> &tasks)
 
     file << "task_id,name,status\n";
 
-    for (auto &t : tasks)
+    for (int i=0;i<taskcount;i++)
     {
-        file << t.task_id << ","
-             << t.name << ","
-             << t.status << "\n";
+        file << tasks[i].task_id << ","
+             << tasks[i].name << ","
+             << tasks[i].status << "\n";
+             
     }
 
     cout << "Tasks saved!\n";
 }
 
-vector<Task> FileIO::loadTasks()
+int loadTasks(Task tasks[], int taskcount)
 {
-    vector<Task> tasks;
     ifstream file("tasks.csv");
     if (!file)
     {
         cout << "Error loading tasks!\n";
-        return tasks;
+        return 0;
     }
 
     string line;
     getline(file, line);
-
+    int  count=0;
     while (getline(file, line))
     {
         stringstream ss(line);
@@ -99,16 +103,19 @@ vector<Task> FileIO::loadTasks()
         getline(ss, id, ',');
         getline(ss, name, ',');
         getline(ss, status, ',');
+        tasks[count].task_id = stoi(id);
+        tasks[count].name    = name;
+        tasks[count].status  = (status == "1");
+        count++;
 
-        tasks.emplace_back(stoi(id), name, status == "1");
     }
 
     cout << "Tasks loaded!\n";
-    return tasks;
+    return count;
 }
 
 // Game state
-void FileIO::saveGameState(int round, int tasksDone, int totalTasks)
+void saveGameState(int round, int tasksDone, int totalTasks)
 {
     ofstream file("game_state.csv");
     if (!file)
@@ -123,7 +130,7 @@ void FileIO::saveGameState(int round, int tasksDone, int totalTasks)
     cout << "Game state saved!\n";
 }
 
-void FileIO::loadGameState(int &round, int &tasksDone, int &totalTasks)
+void loadGameState(int &round, int &tasksDone, int &totalTasks)
 {
     ifstream file("game_state.csv");
     if (!file)
@@ -152,69 +159,49 @@ void FileIO::loadGameState(int &round, int &tasksDone, int &totalTasks)
 
 // Vote
 
-void FileIO::saveVotes(const queue<Vote> &votes)
+void saveVotes(Vote votes[] ,int  votecount)
 {
     ofstream file("votes.csv");
     if (!file)
     {
         cout << "Error saving votes!\n";
-        return;
+        return ;
     }
 
     file << "voter,target\n";
 
-    queue<Vote> copy = votes;
 
-    while (!copy.empty())
+   for (int i=0;i<votecount;i++)
     {
-        file << copy.front().voter_id << ","
-             << copy.front().target_id << "\n";
-        copy.pop();
+        file << votes[i].voter_id << ","
+             << votes[i].target_id << "\n";
     }
 
     cout << "Votes saved!\n";
 }
-queue<Vote> FileIO::loadVotes()
+int Votes(Vote votes[] ,int  votecount)
 {
-    queue<Vote> votes;
     ifstream file("votes.csv");
 
     if (!file)
     {
         cout << "Error loading votes!\n";
-        return votes;
+        return 0;
     }
 
     string line;
     getline(file, line); // skip header
-
-    while (getline(file, line))
+    int  count=0;
+    while (getline(file, line)&&count<votecount)
     {
         stringstream ss(line);
         string v, t;
         getline(ss, v, ',');
         getline(ss, t, ',');
-        votes.push({stoi(v), stoi(t)});
+       votes[count].voter_id = stoi(v);
+        votes[count].target_id = stoi(t);
+        count++;
     }
     cout << "Votes loaded!\n";
-    return votes;
-}
-int main()
-{
-    FileIO io;
-
-    // Test players
-    vector<Player> players = {
-        Player(1, "Alice", "Crewmate", true),
-        Player(2, "Bob", "Impostor", true)};
-
-    io.savePlayers(players);
-    auto loadedPlayers = io.loadPlayers();
-    cout << "Loaded Players:\n";
-    for (auto &p : loadedPlayers)
-    {
-        cout << p.id << " | " << p.name << " | "
-             << p.role << " | " << p.alive << "\n";
-    }
-        return 0;
+    return count;
 }

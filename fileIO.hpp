@@ -2,8 +2,6 @@
 #define FILEIO_HPP
 
 #include <string>
-#include <vector>
-#include <queue>
 using namespace std;
 
 //player class
@@ -39,16 +37,16 @@ struct Vote {
 class FileIO {
 public:
 
-    static void savePlayers(const vector<Player>& players);
-    static vector<Player> loadPlayers();
+    static void savePlayers(Player players[],int amountofplayer );
+    static int loadPlayers();
 
-    static void saveTasks(const vector<Task>& tasks);
-    static vector<Task> loadTasks();
+    static void saveTasks(Task tasks[],int taskcount);
+    static int loadTasks();
 
     static void saveGameState(int round, int tasksDone, int totalTasks);
     static void loadGameState(int &round, int &tasksDone, int &totalTasks);
 
-    static void saveVotes(const queue<Vote>& votes);
-    static queue<Vote> loadVotes();
+    static void saveVotes(Vote votes[], int votecount );
+    static int loadVotes();
 };
 #endif
