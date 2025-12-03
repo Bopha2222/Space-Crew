@@ -1,55 +1,31 @@
-#include "../player/player.hpp"
 #include "../mission-module/mission.hpp"
 
-
-void assignTask(Player &player, int taskID) {
-    player.addTask(taskID);
-    cout << "Assigned task " << taskID << " to " << player.getName() << endl;
-}
-
-void completeTask(Player &player, int taskID) {
-    player.completeTask(taskID);
-}
-
-void printPlayerStatus(Player &player) {
-    cout << "===== PLAYER INFO =====" << endl;
-    cout << "Name: " << player.getName() << endl;
-    cout << "Color: " << player.getRole() << " Role: " 
-         << (player.getRole() == ROLE_IMPOSTER ? "Imposter" : "Crewmate") << endl;
-    cout << "Alive: " << (player.isAlive() ? "Yes" : "No") << endl;
-
-    cout << "Tasks: ";
-    player.taskList.printList();
-
-    cout << "Mission History: ";
-    player.missionHistory.printList();
-    cout << "========================" << endl;
-}
-
 int main() {
+    MissionManager manager;
 
     Player red("Red", "Red", ROLE_CREWMATE);
     Player blue("Blue", "Blue", ROLE_IMPOSTER);
 
 
-    assignTask(red, 101);
-    assignTask(red, 102);
-    assignTask(red, 103);
+    manager.assignTask(red);
+    manager.assignTask(red);
+    manager.assignTask(red);
 
-    assignTask(blue, 201);
-    assignTask(blue, 202);
+    manager.assignTask(blue);
+    manager.assignTask(blue);
 
+    manager.printPlayerStatus(red);
+    manager.printPlayerStatus(blue);
 
-    printPlayerStatus(red);
-    printPlayerStatus(blue);
+   
+    int redTask = red.taskList.head->data;
+    int blueTask = blue.taskList.head->data;
 
+    red.completeTask(redTask);
+    blue.completeTask(blueTask);
 
-    completeTask(red, 101);
-    completeTask(blue, 201);
-
-
-    printPlayerStatus(red);
-    printPlayerStatus(blue);
+    manager.printPlayerStatus(red);
+    manager.printPlayerStatus(blue);
 
     return 0;
 }

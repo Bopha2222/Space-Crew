@@ -1,24 +1,33 @@
 #include "mission.hpp"
 
-
-void assignTask(Player &player, int taskID) {
-    player.addTask(taskID);
-    cout << "Assigned task " << taskID << " to " << player.getName() << endl;
+MissionManager::MissionManager() {
+    srand((unsigned)time(0));
 }
 
+void MissionManager::assignTask(Player &player) {
+    int index;
+    int taskID;
 
-bool isTaskCompleted(Player &player, int taskID) {
+    do {
+        index = rand() % 10; 
+        taskID = allMissionIDs[index];
+    } while (player.taskList.hasValue(taskID));
+    player.addTask(taskID);
+    cout << "Assigned task " << taskID << ": " 
+         << allMissionDescriptions[index] 
+         << " to " << player.getName() << endl;
+}
+
+bool MissionManager::isTaskCompleted(Player &player, int taskID) {
     return player.missionHistory.hasValue(taskID);
 }
 
-
-void printPlayerTasks(Player &player) {
+void MissionManager::printPlayerTasks(Player &player) {
     cout << player.getName() << "'s tasks: ";
     player.taskList.printList();
 }
 
-
-void printPlayerStatus(Player &player) {
+void MissionManager::printPlayerStatus(Player &player) {
     cout << "===== PLAYER INFO =====" << endl;
     cout << "Name: " << player.getName() << endl;
     cout << "Role: " << (player.getRole() == ROLE_IMPOSTER ? "Imposter" : "Crewmate") << endl;
