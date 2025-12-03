@@ -1,3 +1,6 @@
+#ifndef PLAYER_HPP
+#define PLAYER_HPP
+
 #include "../data-structures/LinkedList.hpp"
 #include "../data-structures/queue.hpp"
 #include "../data-structures/stack.hpp"
@@ -156,3 +159,5 @@ public:
         cout << "========================" << endl;
     }
 };
+
+#endif
