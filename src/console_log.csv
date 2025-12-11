@@ -1,0 +1,22 @@
+ryu,login,fail_no_account,2025-12-10,9:58:12
+ryu,signup,fail_password_rules,2025-12-10,9:58:54
+ryu,signup,fail_password_rules,2025-12-10,9:59:8
+1,signup,success,2025-12-10,9:59:48
+1,login,fail_wrong_password,2025-12-10,10:0:17
+1,login,success,2025-12-10,10:0:36
+hi,login,fail_no_account,2025-12-10, 10:20:53
+2025-12-10,10:20:53,hi,Login,Fail
+1,signup,fail_username_exists,2025-12-10, 10:21:22
+2025-12-10,10:21:22,1,Signup,Fail
+1,login,success,2025-12-10, 10:21:34
+2025-12-10,10:21:34,1,Login,Success
+2,signup,success,2025-12-10, 10:43:34
+2025-12-10,10:43:34,2,Signup,Success
+hi,login,fail_no_account,2025-12-11,9:23:45
+1,login,fail_wrong_password,2025-12-11,9:24:1
+hi,signup,fail_password_rules,2025-12-11,9:24:16
+1,signup,fail_username_exists,2025-12-11,9:25:15
+ryu,signup,fail_password_rules,2025-12-11,9:25:42
+ryu,signup,success,2025-12-11,9:26:5
+diablo,signup,success,2025-12-11,9:29:9
+1,login,success,2025-12-11,9:32:12
