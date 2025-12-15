@@ -6,21 +6,18 @@
 #include <sstream>
 #include <string>
 #include <iomanip>
-#include <regex>
 #include <ctime>
+#include <conio.h>
 
 using namespace std;
 
 class LoginSystem
 {
 private:
-
     string userFile = "user.csv";
-    string logFile  = "console_log.csv";
+    string logFile = "console_log.csv";
+    string lockFile = "account_locks.csv";
 
-    // ------------------------------------
-    // SHA-256 (pure C++, NO OpenSSL needed)
-    // ------------------------------------
     unsigned int rightRotate(unsigned int value, unsigned int amount)
     {
         return (value >> amount) | (value << (32 - amount));
@@ -136,149 +133,342 @@ private:
         return ss.str();
     }
 
-    // ----------------------------
-    // Write console log
-    // ----------------------------
-    void writeLog(const string &username,
-                  const string &action,
-                  const string &status)
+    void writeLog(string username, string operation, string status, string reason)
     {
         time_t now = time(0);
         tm *lt = localtime(&now);
 
-        int year   = lt->tm_year + 1900;
-        int month  = lt->tm_mon + 1;
-        int day    = lt->tm_mday;
-
-        int hour   = lt->tm_hour;
-        int minute = lt->tm_min;
-        int second = lt->tm_sec;
+        char date[11];
+        char timeStr[9];
+        
+        sprintf(date, "%04d-%02d-%02d", 1900 + lt->tm_year, 1 + lt->tm_mon, lt->tm_mday);
+        sprintf(timeStr, "%02d:%02d:%02d", lt->tm_hour, lt->tm_min, lt->tm_sec);
 
         ofstream file(logFile, ios::app);
-
-        file << username << ","
-             << action << ","
-             << status << ","
-             << year << "-" << month << "-" << day << ","
-             << hour << ":" << minute << ":" << second
-             << "\n";
+        file << date << "," << timeStr << "," << username << "," 
+             << operation << "," << status << "," << reason << "\n";
+        file.close();
     }
 
-    // ----------------------------
-    // Check username exists
-    // ----------------------------
-    bool usernameExists(const string &uname)
+    bool validateUsername(string uname)
     {
-        ifstream file(userFile);
-
-        string line;
-        string savedName;
-        string savedPwd;
-
-        while (getline(file, line))
+        if (uname.length() < 4)
         {
-            stringstream ss(line);
-            getline(ss, savedName, ',');
-            getline(ss, savedPwd, ',');
+            cout << "Username must be at least 4 characters!\n";
+            return false;
+        }
 
-            if (savedName == uname)
+        bool hasLetter = false;
+        bool allDigits = true;
+
+        for (int i = 0; i < uname.length(); i++)
+        {
+            char c = uname[i];
+            if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
             {
-                return true;
+                hasLetter = true;
+                allDigits = false;
+            }
+            else if (c >= '0' && c <= '9')
+            {
+                // digit
+            }
+            else
+            {
+                cout << "Username can only contain letters and numbers!\n";
+                return false;
             }
         }
 
-        return false;
-    }
-
-    // ----------------------------
-    // Validate password strength
-    // ----------------------------
-    bool validatePassword(const string &pwd)
-    {
-        if (pwd.length() < 8) return false;
-
-        regex upper("[A-Z]");
-        regex lower("[a-z]");
-        regex digit("[0-9]");
-        regex special("[^A-Za-z0-9]");
-
-        return regex_search(pwd, upper) &&
-               regex_search(pwd, lower) &&
-               regex_search(pwd, digit) &&
-               regex_search(pwd, special);
-    }
-
-public:
-
-    // ----------------------------
-    // Signup
-    // ----------------------------
-    bool signup(const string &uname, const string &pwd)
-    {
-        if (usernameExists(uname))
+        if (allDigits)
         {
-            cout << "Account already exists!\n";
-            writeLog(uname, "signup", "fail_username_exists");
+            cout << "Username cannot be all numbers!\n";
             return false;
         }
-
-        if (!validatePassword(pwd))
-        {
-            cout << "Password too weak.\n";
-            writeLog(uname, "signup", "fail_password_rules");
-            return false;
-        }
-
-        string hashed = sha256(pwd);
-
-        ofstream file(userFile, ios::app);
-        file << uname << "," << hashed << "\n";
-
-        cout << "Signup successful!\n";
-        writeLog(uname, "signup", "success");
 
         return true;
     }
 
-    // ----------------------------
-    // Login
-    // ----------------------------
-    bool login(const string &uname, const string &pwd)
+    bool isAdminPassword(string pwd)
+    {
+        // Must be EXACTLY 10 characters: IDTB11 + 4 digits
+        if (pwd.length() != 10) return false;
+        
+        // Check IDTB11 prefix (case-sensitive)
+        if (pwd.substr(0, 6) != "IDTB11") return false;
+        
+        // Last 4 characters must be digits
+        for (int i = 6; i < 10; i++)
+        {
+            if (pwd[i] < '0' || pwd[i] > '9')
+            {
+                return false;
+            }
+        }
+        
+        return true;
+    }
+
+    bool validatePassword(string pwd, bool isAdmin)
+    {
+        // Admin passwords have different requirements
+        if (isAdmin)
+        {
+            // Admin password is just IDTB11XXXX (already validated)
+            return true;
+        }
+        
+        // Regular user password requirements
+        if (pwd.length() < 8)
+        {
+            cout << "Password must be at least 8 characters!\n";
+            return false;
+        }
+
+        bool hasUpper = false;
+        bool hasLower = false;
+        bool hasDigit = false;
+        bool hasSpecial = false;
+
+        for (int i = 0; i < pwd.length(); i++)
+        {
+            char c = pwd[i];
+            if (c >= 'A' && c <= 'Z') hasUpper = true;
+            else if (c >= 'a' && c <= 'z') hasLower = true;
+            else if (c >= '0' && c <= '9') hasDigit = true;
+            else hasSpecial = true;
+        }
+
+        if (!hasUpper || !hasLower || !hasDigit || !hasSpecial)
+        {
+            cout << "Password must contain uppercase, lowercase, digit, and special character!\n";
+            return false;
+        }
+
+        return true;
+    }
+
+public:
+    bool usernameExists(string uname)
     {
         ifstream file(userFile);
-
-        string hashedInput = sha256(pwd);
-        string line;
-
-        string savedName;
-        string savedHash;
+        if (!file) return false;
+        
+        string line, savedName, savedHash, deleted, isAdmin;
 
         while (getline(file, line))
         {
             stringstream ss(line);
-
             getline(ss, savedName, ',');
             getline(ss, savedHash, ',');
+            getline(ss, deleted, ',');
+            getline(ss, isAdmin, ',');
 
-            if (savedName == uname)
+            if (savedName == uname && deleted != "1")
             {
+                file.close();
+                return true;
+            }
+        }
+        file.close();
+        return false;
+    }
+
+    bool isAdmin(string uname)
+    {
+        ifstream file(userFile);
+        if (!file) return false;
+        
+        string line, savedName, savedHash, deleted, isAdmin;
+
+        while (getline(file, line))
+        {
+            stringstream ss(line);
+            getline(ss, savedName, ',');
+            getline(ss, savedHash, ',');
+            getline(ss, deleted, ',');
+            getline(ss, isAdmin, ',');
+
+            if (savedName == uname && deleted != "1")
+            {
+                file.close();
+                return (isAdmin == "1");
+            }
+        }
+        file.close();
+        return false;
+    }
+
+    bool canChangePassword(string uname)
+    {
+        // Admins cannot change password
+        return !isAdmin(uname);
+    }
+
+    bool isAccountLocked(string uname)
+    {
+        ifstream file(lockFile);
+        if (!file) return false;
+        
+        string line, username, lockTimeStr;
+        time_t now = time(0);
+
+        while (getline(file, line))
+        {
+            stringstream ss(line);
+            getline(ss, username, ',');
+            getline(ss, lockTimeStr, ',');
+
+            if (username == uname)
+            {
+                time_t lockTime = stoll(lockTimeStr);
+                if (now - lockTime < 60)
+                {
+                    int remaining = 60 - (now - lockTime);
+                    cout << "Account locked! Try again in " << remaining << " seconds.\n";
+                    file.close();
+                    return true;
+                }
+            }
+        }
+        file.close();
+        return false;
+    }
+
+    void lockAccount(string uname)
+    {
+        time_t now = time(0);
+        ofstream file(lockFile, ios::app);
+        file << uname << "," << now << "\n";
+        file.close();
+        cout << "\nToo many failed attempts! Account locked for 1 minute.\n";
+    }
+
+    string getHiddenPassword()
+    {
+        string password = "";
+        char ch;
+
+        while (true)
+        {
+            ch = _getch();
+
+            if (ch == 13)
+            {
+                cout << endl;
+                break;
+            }
+            else if (ch == 8)
+            {
+                if (password.length() > 0)
+                {
+                    password.pop_back();
+                    cout << "\b \b";
+                }
+            }
+            else
+            {
+                password += ch;
+                cout << '*';
+            }
+        }
+
+        return password;
+    }
+
+    bool signup(string uname, string pwd)
+    {
+        if (!validateUsername(uname))
+        {
+            writeLog(uname, "signup", "fail", "invalid_username_format");
+            return false;
+        }
+
+        if (usernameExists(uname))
+        {
+            cout << "Username already exists!\n";
+            writeLog(uname, "signup", "fail", "username_exists");
+            return false;
+        }
+
+        bool adminAccount = isAdminPassword(pwd);
+        
+        if (!validatePassword(pwd, adminAccount))
+        {
+            writeLog(uname, "signup", "fail", "weak_password");
+            return false;
+        }
+
+        string hashed = sha256(pwd);
+        
+        ofstream file(userFile, ios::app);
+        file << uname << "," << hashed << ",0," << (adminAccount ? "1" : "0") << "\n";
+        file.close();
+
+        cout << "\nSignup successful!\n";
+        if (adminAccount)
+        {
+            cout << "*** ADMIN ACCOUNT CREATED ***\n";
+            cout << "Admin password is permanent and cannot be changed!\n";
+        }
+        
+        writeLog(uname, "signup", "success", "none");
+        return true;
+    }
+
+    bool login(string uname, string pwd)
+    {
+        ifstream file(userFile);
+        if (!file)
+        {
+            cout << "Account not found!\n";
+            writeLog(uname, "login", "fail", "account_not_found");
+            return false;
+        }
+
+        string hashedInput = sha256(pwd);
+        string line, savedName, savedHash, deleted, isAdmin;
+        bool found = false;
+
+        while (getline(file, line))
+        {
+            stringstream ss(line);
+            getline(ss, savedName, ',');
+            getline(ss, savedHash, ',');
+            getline(ss, deleted, ',');
+            getline(ss, isAdmin, ',');
+
+            if (savedName == uname && deleted != "1")
+            {
+                found = true;
                 if (savedHash == hashedInput)
                 {
-                    writeLog(uname, "login", "success");
+                    file.close();
+                    
+                    if (isAdmin == "1")
+                    {
+                        cout << "\n*** ADMIN LOGIN SUCCESSFUL ***\n";
+                    }
+                    
+                    writeLog(uname, "login", "success", "none");
                     return true;
                 }
                 else
                 {
-                    cout << "Incorrect password.\n";
-                    writeLog(uname, "login", "fail_wrong_password");
+                    file.close();
+                    cout << "Incorrect password!\n";
+                    writeLog(uname, "login", "fail", "wrong_password");
                     return false;
                 }
             }
         }
 
-        cout << "Account not found.\n";
-        writeLog(uname, "login", "fail_no_account");
-
+        file.close();
+        if (!found)
+        {
+            cout << "Account not found!\n";
+            writeLog(uname, "login", "fail", "account_not_found");
+        }
         return false;
     }
 };
