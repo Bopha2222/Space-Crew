@@ -14,9 +14,9 @@ using namespace std;
 class LoginSystem
 {
 private:
-    string userFile = "user.csv";
-    string logFile = "console_log.csv";
-    string lockFile = "account_locks.csv";
+    string userFile = "data/user.csv";
+    string logFile = "data/console_log.csv";
+    string lockFile = "data/account_locks.csv";
 
     unsigned int rightRotate(unsigned int value, unsigned int amount)
     {

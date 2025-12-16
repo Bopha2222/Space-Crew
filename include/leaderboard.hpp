@@ -12,7 +12,7 @@ class Leaderboard
 public:
     void show()
     {
-        ifstream file("game_results.csv");
+        ifstream file("data/game_results.csv");
         if (!file)
         {
             cout << "No game results found.\n";

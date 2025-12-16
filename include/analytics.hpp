@@ -102,7 +102,7 @@ public:
             report.failures[i].percentage = 0;
         }
 
-        ifstream file("console_log.csv");
+        ifstream file("data/console_log.csv");
         if (!file)
         {
             return report;
@@ -221,7 +221,7 @@ public:
             report.failures[i].percentage = 0;
         }
 
-        ifstream file("console_log.csv");
+        ifstream file("data/console_log.csv");
         if (!file)
         {
             return report;
@@ -328,7 +328,7 @@ public:
         string usernames[1000];
         int userCount = 0;
 
-        ifstream file("console_log.csv");
+        ifstream file("data/console_log.csv");
         if (!file)
         {
             return report;

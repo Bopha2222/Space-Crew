@@ -1,0 +1,3 @@
+D:/CADT/Year2/Advance Algorithm and Data Structure/Final Project/Code/Space-Crew/build/CMakeFiles/among_us_gui.dir
+D:/CADT/Year2/Advance Algorithm and Data Structure/Final Project/Code/Space-Crew/build/CMakeFiles/edit_cache.dir
+D:/CADT/Year2/Advance Algorithm and Data Structure/Final Project/Code/Space-Crew/build/CMakeFiles/rebuild_cache.dir

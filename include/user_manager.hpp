@@ -11,7 +11,7 @@ using namespace std;
 class UserManager
 {
 private:
-    string userFile = "user.csv";
+    string userFile = "data/user.csv";
 
 public:
     struct UserInfo
@@ -112,7 +112,7 @@ public:
             return;
         }
 
-        string tempFile = "temp_users.csv";
+        string tempFile = "data/temp_users.csv";
         ofstream fileOut(tempFile);
 
         string line;
@@ -165,7 +165,7 @@ public:
             return;
         }
 
-        string tempFile = "temp_users.csv";
+        string tempFile = "data/temp_users.csv";
         ofstream fileOut(tempFile);
 
         string line;
@@ -216,7 +216,7 @@ public:
             return;
         }
 
-        string tempFile = "temp_users.csv";
+        string tempFile = "data/temp_users.csv";
         ofstream fileOut(tempFile);
 
         string line;
@@ -269,8 +269,8 @@ public:
             return;
         }
 
-        ifstream logFile("console_log.csv");
-        ifstream gameFile("game_results.csv");
+        ifstream logFile("data/console_log.csv");
+        ifstream gameFile("data/game_results.csv");
 
         int totalLogins = 0;
         int failedLogins = 0;

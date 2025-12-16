@@ -1,0 +1,1 @@
+  -L"D:/CADT/Year2/Advance Algorithm and Data Structure/Final Project/Code/Space-Crew/SFML-3.0.2/lib"  -lsfml-graphics -lsfml-window -lsfml-system -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

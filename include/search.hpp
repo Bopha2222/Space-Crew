@@ -13,7 +13,7 @@ class SearchSystem
 public:
     void searchByUsername(string username)
     {
-        ifstream file("console_log.csv");
+        ifstream file("data/console_log.csv");
         if (!file)
         {
             cout << "Log file not found!\n";
@@ -61,7 +61,7 @@ public:
 
     void searchByDate(string targetDate)
     {
-        ifstream file("console_log.csv");
+        ifstream file("data/console_log.csv");
         if (!file)
         {
             cout << "Log file not found!\n";
@@ -109,7 +109,7 @@ public:
 
     void searchByOperation(string operationType)
     {
-        ifstream file("console_log.csv");
+        ifstream file("data/console_log.csv");
         if (!file)
         {
             cout << "Log file not found!\n";
@@ -157,7 +157,7 @@ public:
 
     void searchByStatus(string targetStatus)
     {
-        ifstream file("console_log.csv");
+        ifstream file("data/console_log.csv");
         if (!file)
         {
             cout << "Log file not found!\n";
@@ -205,7 +205,7 @@ public:
 
     void searchByFailureReason(string failureReason)
     {
-        ifstream file("console_log.csv");
+        ifstream file("data/console_log.csv");
         if (!file)
         {
             cout << "Log file not found!\n";
@@ -253,7 +253,7 @@ public:
 
     void searchByDateRange(string startDate, string endDate)
     {
-        ifstream file("console_log.csv");
+        ifstream file("data/console_log.csv");
         if (!file)
         {
             cout << "Log file not found!\n";

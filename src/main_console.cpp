@@ -15,10 +15,10 @@ using namespace std;
 void createCSVFiles()
 {
     // Check and create user.csv with header
-    ifstream checkUser("user.csv");
+    ifstream checkUser("data/user.csv");
     if (!checkUser)
     {
-        ofstream file("user.csv");
+        ofstream file("data/user.csv");
         file << "Username,PasswordHash,Deleted,IsAdmin\n";
         file.close();
     }
@@ -28,10 +28,10 @@ void createCSVFiles()
     }
 
     // Check and create console_log.csv with header
-    ifstream checkLog("console_log.csv");
+    ifstream checkLog("data/console_log.csv");
     if (!checkLog)
     {
-        ofstream file("console_log.csv");
+        ofstream file("data/console_log.csv");
         file << "Date,Time,Username,Operation,Status,Reason\n";
         file.close();
     }
@@ -41,10 +41,10 @@ void createCSVFiles()
     }
 
     // Check and create game_results.csv with header
-    ifstream checkGame("game_results.csv");
+    ifstream checkGame("data/game_results.csv");
     if (!checkGame)
     {
-        ofstream file("game_results.csv");
+        ofstream file("data/game_results.csv");
         file << "Username,Outcome\n";
         file.close();
     }
@@ -54,10 +54,10 @@ void createCSVFiles()
     }
 
     // Check and create account_locks.csv with header
-    ifstream checkLock("account_locks.csv");
+    ifstream checkLock("data/account_locks.csv");
     if (!checkLock)
     {
-        ofstream file("account_locks.csv");
+        ofstream file("data/account_locks.csv");
         file << "Username,LockTimestamp\n";
         file.close();
     }
@@ -67,10 +67,10 @@ void createCSVFiles()
     }
 
     // Check and create task.csv with header and default tasks
-    ifstream checkTask("task.csv");
+    ifstream checkTask("data/task.csv");
     if (!checkTask)
     {
-        ofstream file("task.csv");
+        ofstream file("data/task.csv");
         file << "TaskName\n";
         file << "Fix Wiring\n";
         file << "Empty Garbage\n";
@@ -88,10 +88,10 @@ void createCSVFiles()
     }
 
     // Check and create taskpw.csv with header
-    ifstream checkTaskPw("taskpw.csv");
+    ifstream checkTaskPw("data/taskpw.csv");
     if (!checkTaskPw)
     {
-        ofstream file("taskpw.csv");
+        ofstream file("data/taskpw.csv");
         file << "Password\n";
         file << "wire123\n";
         file << "trash456\n";
@@ -109,10 +109,10 @@ void createCSVFiles()
     }
 
     // Check and create taskroom.csv with header
-    ifstream checkTaskRoom("taskroom.csv");
+    ifstream checkTaskRoom("data/taskroom.csv");
     if (!checkTaskRoom)
     {
-        ofstream file("taskroom.csv");
+        ofstream file("data/taskroom.csv");
         file << "RoomLocation\n";
         file << "Room 3\n";
         file << "Room 5\n";
@@ -132,7 +132,7 @@ void createCSVFiles()
 
 void logGameResult(string username, bool playerWon)
 {
-    ofstream file("game_results.csv", ios::app);
+    ofstream file("data/game_results.csv", ios::app);
     if (!file) return;
 
     file << username << ",";

@@ -31,9 +31,9 @@ public:
         passwords.clearList();
         rooms.clearList();
 
-        ifstream taskFile("task.csv");
-        ifstream pwFile("taskpw.csv");
-        ifstream roomFile("taskroom.csv");
+        ifstream taskFile("data/task.csv");
+        ifstream pwFile("data/taskpw.csv");
+        ifstream roomFile("data/taskroom.csv");
 
         string taskLine, pwLine, roomLine;
 
@@ -80,9 +80,9 @@ public:
 
     void saveTasks()
     {
-        ofstream taskFile("task.csv");
-        ofstream pwFile("taskpw.csv");
-        ofstream roomFile("taskroom.csv");
+        ofstream taskFile("data/task.csv");
+        ofstream pwFile("data/taskpw.csv");
+        ofstream roomFile("data/taskroom.csv");
 
         // Write headers
         taskFile << "TaskName\n";
