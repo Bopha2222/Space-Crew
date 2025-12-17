@@ -1,12 +1,31 @@
+Main Responsibility of our team 
 
+Chhim Soksambath:
+-	Core Game Flow
+-	Map
+-	Code merger
+-	GUI 
+-	Test and debug.etc.
 
+Leang sivming:
+-	Linked list
+-	Queue
+-	Stack
+-	Test 
 
+Seng Chansreybopha:
+-	Github Repository Manager
+-	Task allocator
+-	Player movement logic
+-	Bot movement logic
 
-Tasks division : 
-1. Seng chansreybopha         : Player System               handle: Player.hpp / Player.cpp   branch: player-module  
-2.	Yuth molika	              :	Crew Roles / Mission Logic  handle: Crew.hpp / Mission.hpp    branch: mission-module 
-3.	Chhim soksambath	                      : Game Engine + Flow          handle: Game.hpp / Game.cpp       branch: game-engine    
-4.	Leang sivming	                      : UI & Menu System            handle: Menu.cpp                  branch: ui-logic       
-5. Yann Laiey	              :	File Save/Load              handle: SaveLoad.cpp              branch: data-storage   
-  
+Yann Laie:
+-	Read/write data to csv
+-	Leaderboard
+-	Test
 
+Yuth Molika:
+-	Player role 
+-	Missions 
+-	Difficulty
+-	Test 
