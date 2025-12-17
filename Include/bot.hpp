@@ -1,4 +1,3 @@
-
 #ifndef BOT_HPP
 #define BOT_HPP
 
@@ -34,7 +33,7 @@ public:
         lastKillRound = -5;
     }
 
-    void takeTurn(Player &player, Bot bots[], int botCount, GameMap &map, TaskManager &taskManager, int roundNumber, int killCooldown);
+    void takeTurn(Player &player, Bot bots[], int botCount, GameMap &map, TaskManager &taskManager, int roundNumber, int killCooldown, int difficulty);
 };
 
 #endif
