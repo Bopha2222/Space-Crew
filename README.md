@@ -15,7 +15,6 @@ As for the folder :
 ## 7.gitignore: Github system file.
 ## 8.update.bat # auto-update script.
 
-## Group note : 
-Everyone will code and their works into each branches themselve. The main branch is untouched unless the final porlised code.
+## Group note : Everyone will code and push their works into each branches themselve. The main branch is untouched unless the final porlised code.
 
 
