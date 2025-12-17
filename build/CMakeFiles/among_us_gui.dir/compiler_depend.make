@@ -87,10 +87,12 @@ CMakeFiles/among_us_gui.dir/main.cpp.obj: D:/CADT/Year2/Advance\ Algorithm\ and\
   C:/msys64/ucrt64/include/_mingw_stat64.h \
   C:/msys64/ucrt64/include/_timeval.h \
   C:/msys64/ucrt64/include/assert.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/algorithm \
   C:/msys64/ucrt64/include/c++/15.2.0/array \
   C:/msys64/ucrt64/include/c++/15.2.0/backward/auto_ptr.h \
   C:/msys64/ucrt64/include/c++/15.2.0/backward/binders.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bit \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/algorithmfwd.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/align.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/alloc_traits.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/allocated_ptr.h \
@@ -118,6 +120,7 @@ CMakeFiles/among_us_gui.dir/main.cpp.obj: D:/CADT/Year2/Advance\ Algorithm\ and\
   C:/msys64/ucrt64/include/c++/15.2.0/bits/fs_fwd.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/fs_ops.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/fs_path.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/fstream.tcc \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/functexcept.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/functional_hash.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/hash_bytes.h \
@@ -157,17 +160,23 @@ CMakeFiles/among_us_gui.dir/main.cpp.obj: D:/CADT/Year2/Advance\ Algorithm\ and\
   C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr_base.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/sstream.tcc \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/std_abs.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/std_function.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_algo.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_algobase.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_bvector.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_construct.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_function.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_heap.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator_base_funcs.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator_base_types.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_map.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_multimap.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_pair.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_raw_storage_iter.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_relops.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_tempbuf.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_tree.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_uninitialized.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_vector.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/stream_iterator.h \
@@ -175,6 +184,7 @@ CMakeFiles/among_us_gui.dir/main.cpp.obj: D:/CADT/Year2/Advance\ Algorithm\ and\
   C:/msys64/ucrt64/include/c++/15.2.0/bits/streambuf_iterator.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/string_view.tcc \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/stringfwd.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/uniform_int_dist.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/unique_ptr.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/unordered_map.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator.h \
@@ -208,6 +218,8 @@ CMakeFiles/among_us_gui.dir/main.cpp.obj: D:/CADT/Year2/Advance\ Algorithm\ and\
   C:/msys64/ucrt64/include/c++/15.2.0/ext/string_conversions.h \
   C:/msys64/ucrt64/include/c++/15.2.0/ext/type_traits.h \
   C:/msys64/ucrt64/include/c++/15.2.0/filesystem \
+  C:/msys64/ucrt64/include/c++/15.2.0/fstream \
+  C:/msys64/ucrt64/include/c++/15.2.0/functional \
   C:/msys64/ucrt64/include/c++/15.2.0/initializer_list \
   C:/msys64/ucrt64/include/c++/15.2.0/iomanip \
   C:/msys64/ucrt64/include/c++/15.2.0/ios \
@@ -217,11 +229,13 @@ CMakeFiles/among_us_gui.dir/main.cpp.obj: D:/CADT/Year2/Advance\ Algorithm\ and\
   C:/msys64/ucrt64/include/c++/15.2.0/iterator \
   C:/msys64/ucrt64/include/c++/15.2.0/limits \
   C:/msys64/ucrt64/include/c++/15.2.0/locale \
+  C:/msys64/ucrt64/include/c++/15.2.0/map \
   C:/msys64/ucrt64/include/c++/15.2.0/memory \
   C:/msys64/ucrt64/include/c++/15.2.0/new \
   C:/msys64/ucrt64/include/c++/15.2.0/optional \
   C:/msys64/ucrt64/include/c++/15.2.0/ostream \
   C:/msys64/ucrt64/include/c++/15.2.0/pstl/execution_defs.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/pstl/glue_algorithm_defs.h \
   C:/msys64/ucrt64/include/c++/15.2.0/pstl/glue_memory_defs.h \
   C:/msys64/ucrt64/include/c++/15.2.0/pstl/pstl_config.h \
   C:/msys64/ucrt64/include/c++/15.2.0/ratio \
@@ -240,8 +254,10 @@ CMakeFiles/among_us_gui.dir/main.cpp.obj: D:/CADT/Year2/Advance\ Algorithm\ and\
   C:/msys64/ucrt64/include/c++/15.2.0/variant \
   C:/msys64/ucrt64/include/c++/15.2.0/vector \
   C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/atomic_word.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/basic_file.h \
   C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++allocator.h \
   C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++config.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++io.h \
   C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++locale.h \
   C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/cpu_defines.h \
   C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/ctype_base.h \
@@ -252,6 +268,7 @@ CMakeFiles/among_us_gui.dir/main.cpp.obj: D:/CADT/Year2/Advance\ Algorithm\ and\
   C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/messages_members.h \
   C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/os_defines.h \
   C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/time_members.h \
+  C:/msys64/ucrt64/include/conio.h \
   C:/msys64/ucrt64/include/corecrt.h \
   C:/msys64/ucrt64/include/corecrt_startup.h \
   C:/msys64/ucrt64/include/corecrt_stdio_config.h \
@@ -271,6 +288,7 @@ CMakeFiles/among_us_gui.dir/main.cpp.obj: D:/CADT/Year2/Advance\ Algorithm\ and\
   C:/msys64/ucrt64/include/pthread_unistd.h \
   C:/msys64/ucrt64/include/sched.h \
   C:/msys64/ucrt64/include/sdks/_mingw_ddk.h \
+  C:/msys64/ucrt64/include/sec_api/conio_s.h \
   C:/msys64/ucrt64/include/sec_api/stdio_s.h \
   C:/msys64/ucrt64/include/sec_api/stdlib_s.h \
   C:/msys64/ucrt64/include/sec_api/sys/timeb_s.h \
@@ -292,7 +310,19 @@ CMakeFiles/among_us_gui.dir/main.cpp.obj: D:/CADT/Year2/Advance\ Algorithm\ and\
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/syslimits.h \
-  D:/CADT/Year2/Advance\ Algorithm\ and\ Data\ Structure/Final\ Project/Code/Space-Crew/include/gui_manager.hpp
+  D:/CADT/Year2/Advance\ Algorithm\ and\ Data\ Structure/Final\ Project/Code/Space-Crew/include/Button.hpp \
+  D:/CADT/Year2/Advance\ Algorithm\ and\ Data\ Structure/Final\ Project/Code/Space-Crew/include/LinkedList.hpp \
+  D:/CADT/Year2/Advance\ Algorithm\ and\ Data\ Structure/Final\ Project/Code/Space-Crew/include/Stack.hpp \
+  D:/CADT/Year2/Advance\ Algorithm\ and\ Data\ Structure/Final\ Project/Code/Space-Crew/include/TextBox.hpp \
+  D:/CADT/Year2/Advance\ Algorithm\ and\ Data\ Structure/Final\ Project/Code/Space-Crew/include/bot.hpp \
+  D:/CADT/Year2/Advance\ Algorithm\ and\ Data\ Structure/Final\ Project/Code/Space-Crew/include/bot_impl.hpp \
+  D:/CADT/Year2/Advance\ Algorithm\ and\ Data\ Structure/Final\ Project/Code/Space-Crew/include/game.hpp \
+  D:/CADT/Year2/Advance\ Algorithm\ and\ Data\ Structure/Final\ Project/Code/Space-Crew/include/gui_manager.hpp \
+  D:/CADT/Year2/Advance\ Algorithm\ and\ Data\ Structure/Final\ Project/Code/Space-Crew/include/leaderboard.hpp \
+  D:/CADT/Year2/Advance\ Algorithm\ and\ Data\ Structure/Final\ Project/Code/Space-Crew/include/login.hpp \
+  D:/CADT/Year2/Advance\ Algorithm\ and\ Data\ Structure/Final\ Project/Code/Space-Crew/include/map.hpp \
+  D:/CADT/Year2/Advance\ Algorithm\ and\ Data\ Structure/Final\ Project/Code/Space-Crew/include/player.hpp \
+  D:/CADT/Year2/Advance\ Algorithm\ and\ Data\ Structure/Final\ Project/Code/Space-Crew/include/task_manager.hpp
 
 
 C:/msys64/ucrt64/include/SFML/Graphics/Sprite.hpp:
@@ -366,6 +396,8 @@ C:/msys64/ucrt64/include/corecrt_stdio_config.h:
 C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++config.h:
 
 C:/msys64/ucrt64/include/SFML/Graphics/RectangleShape.hpp:
+
+C:/msys64/ucrt64/include/c++/15.2.0/pstl/glue_algorithm_defs.h:
 
 C:/msys64/ucrt64/include/SFML/Graphics/Vertex.hpp:
 
@@ -509,6 +541,8 @@ C:/msys64/ucrt64/include/c++/15.2.0/exception:
 
 C:/msys64/ucrt64/include/SFML/Window/WindowEnums.hpp:
 
+C:/msys64/ucrt64/include/c++/15.2.0/bits/std_function.h:
+
 C:/msys64/ucrt64/include/SFML/Window/WindowHandle.hpp:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/streambuf.tcc:
@@ -527,6 +561,8 @@ C:/msys64/ucrt64/include/_timeval.h:
 
 C:/msys64/ucrt64/include/assert.h:
 
+C:/msys64/ucrt64/include/c++/15.2.0/algorithm:
+
 C:/msys64/ucrt64/include/c++/15.2.0/backward/auto_ptr.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/istream:
@@ -538,6 +574,10 @@ C:/msys64/ucrt64/include/c++/15.2.0/bits/quoted_string.h:
 C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_ios.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bit:
+
+D:/CADT/Year2/Advance\ Algorithm\ and\ Data\ Structure/Final\ Project/Code/Space-Crew/include/task_manager.hpp:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/algorithmfwd.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/align.h:
 
@@ -558,6 +598,8 @@ C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_string.h:
 C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_string.tcc:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/charconv.h:
+
+D:/CADT/Year2/Advance\ Algorithm\ and\ Data\ Structure/Final\ Project/Code/Space-Crew/include/map.hpp:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/chrono.h:
 
@@ -585,9 +627,13 @@ C:/msys64/ucrt64/include/c++/15.2.0/bits/erase_if.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/exception_ptr.h:
 
+C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++io.h:
+
 C:/msys64/ucrt64/include/c++/15.2.0/bits/fs_dir.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/fs_fwd.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/fstream.tcc:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/functexcept.h:
 
@@ -667,11 +713,21 @@ C:/msys64/ucrt64/include/c++/15.2.0/bits/sstream.tcc:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/std_abs.h:
 
+C:/msys64/ucrt64/include/c++/15.2.0/optional:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_algo.h:
+
 C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_algobase.h:
+
+D:/CADT/Year2/Advance\ Algorithm\ and\ Data\ Structure/Final\ Project/Code/Space-Crew/include/Button.hpp:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_bvector.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_construct.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/functional:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_heap.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator.h:
 
@@ -679,11 +735,17 @@ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator_base_funcs.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator_base_types.h:
 
+C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_map.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_multimap.h:
+
 C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_pair.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_raw_storage_iter.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_tempbuf.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_tree.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_uninitialized.h:
 
@@ -692,6 +754,8 @@ C:/msys64/ucrt64/include/c++/15.2.0/bits/streambuf_iterator.h:
 C:/msys64/ucrt64/include/c++/15.2.0/bits/string_view.tcc:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/stringfwd.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/uniform_int_dist.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/unordered_map.h:
 
@@ -753,6 +817,8 @@ C:/msys64/ucrt64/include/limits.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/filesystem:
 
+C:/msys64/ucrt64/include/c++/15.2.0/fstream:
+
 C:/msys64/ucrt64/include/c++/15.2.0/initializer_list:
 
 C:/msys64/ucrt64/include/c++/15.2.0/variant:
@@ -769,13 +835,15 @@ C:/msys64/ucrt64/include/c++/15.2.0/limits:
 
 C:/msys64/ucrt64/include/c++/15.2.0/locale:
 
+C:/msys64/ucrt64/include/sched.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/map:
+
 C:/msys64/ucrt64/include/c++/15.2.0/ostream:
 
 C:/msys64/ucrt64/include/c++/15.2.0/memory:
 
 C:/msys64/ucrt64/include/c++/15.2.0/new:
-
-C:/msys64/ucrt64/include/c++/15.2.0/optional:
 
 C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/error_constants.h:
 
@@ -805,6 +873,10 @@ C:/msys64/ucrt64/include/c++/15.2.0/vector:
 
 C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/atomic_word.h:
 
+C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/basic_file.h:
+
+D:/CADT/Year2/Advance\ Algorithm\ and\ Data\ Structure/Final\ Project/Code/Space-Crew/include/TextBox.hpp:
+
 C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++locale.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/time_members.h:
@@ -816,6 +888,8 @@ C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr-default.h:
 C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/os_defines.h:
+
+C:/msys64/ucrt64/include/conio.h:
 
 C:/msys64/ucrt64/include/corecrt_startup.h:
 
@@ -841,9 +915,9 @@ C:/msys64/ucrt64/include/pthread_signal.h:
 
 C:/msys64/ucrt64/include/pthread_time.h:
 
-C:/msys64/ucrt64/include/sched.h:
-
 C:/msys64/ucrt64/include/sdks/_mingw_ddk.h:
+
+C:/msys64/ucrt64/include/sec_api/conio_s.h:
 
 C:/msys64/ucrt64/include/sec_api/stdio_s.h:
 
@@ -858,6 +932,8 @@ C:/msys64/ucrt64/include/stddef.h:
 C:/msys64/ucrt64/include/swprintf.inl:
 
 C:/msys64/ucrt64/include/sys/types.h:
+
+D:/CADT/Year2/Advance\ Algorithm\ and\ Data\ Structure/Final\ Project/Code/Space-Crew/include/bot_impl.hpp:
 
 C:/msys64/ucrt64/include/time.h:
 
@@ -877,4 +953,18 @@ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/syslimits.h:
 
+D:/CADT/Year2/Advance\ Algorithm\ and\ Data\ Structure/Final\ Project/Code/Space-Crew/include/LinkedList.hpp:
+
+D:/CADT/Year2/Advance\ Algorithm\ and\ Data\ Structure/Final\ Project/Code/Space-Crew/include/Stack.hpp:
+
+D:/CADT/Year2/Advance\ Algorithm\ and\ Data\ Structure/Final\ Project/Code/Space-Crew/include/bot.hpp:
+
+D:/CADT/Year2/Advance\ Algorithm\ and\ Data\ Structure/Final\ Project/Code/Space-Crew/include/game.hpp:
+
 D:/CADT/Year2/Advance\ Algorithm\ and\ Data\ Structure/Final\ Project/Code/Space-Crew/include/gui_manager.hpp:
+
+D:/CADT/Year2/Advance\ Algorithm\ and\ Data\ Structure/Final\ Project/Code/Space-Crew/include/leaderboard.hpp:
+
+D:/CADT/Year2/Advance\ Algorithm\ and\ Data\ Structure/Final\ Project/Code/Space-Crew/include/login.hpp:
+
+D:/CADT/Year2/Advance\ Algorithm\ and\ Data\ Structure/Final\ Project/Code/Space-Crew/include/player.hpp:

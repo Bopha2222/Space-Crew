@@ -1,4 +1,4 @@
-#include "ginclude/gui_manager.hpp"
+#include "include/gui_manager.hpp"
 #include <iostream>
 
 using namespace std;

@@ -285,4 +285,34 @@ CMakeFiles/among_us_gui.dir/main.cpp.obj: \
  C:/msys64/ucrt64/include/SFML/System/InputStream.hpp \
  C:/msys64/ucrt64/include/SFML/System/MemoryInputStream.hpp \
  C:/msys64/ucrt64/include/SFML/System/Sleep.hpp \
- C:/msys64/ucrt64/include/c++/15.2.0/iostream
+ C:/msys64/ucrt64/include/c++/15.2.0/iostream \
+ C:/msys64/ucrt64/include/c++/15.2.0/fstream \
+ C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/basic_file.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++io.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/fstream.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/map \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_tree.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_map.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_multimap.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/algorithm \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_algo.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/algorithmfwd.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_heap.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/uniform_int_dist.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/pstl/glue_algorithm_defs.h \
+ D:\CADT\Year2\Advance\ Algorithm\ and\ Data\ Structure\Final\ Project\Code\Space-Crew\include/Button.hpp \
+ C:/msys64/ucrt64/include/c++/15.2.0/functional \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/std_function.h \
+ D:\CADT\Year2\Advance\ Algorithm\ and\ Data\ Structure\Final\ Project\Code\Space-Crew\include/TextBox.hpp \
+ D:\CADT\Year2\Advance\ Algorithm\ and\ Data\ Structure\Final\ Project\Code\Space-Crew\include/login.hpp \
+ C:/msys64/ucrt64/include/conio.h \
+ C:/msys64/ucrt64/include/sec_api/conio_s.h \
+ D:\CADT\Year2\Advance\ Algorithm\ and\ Data\ Structure\Final\ Project\Code\Space-Crew\include/leaderboard.hpp \
+ D:\CADT\Year2\Advance\ Algorithm\ and\ Data\ Structure\Final\ Project\Code\Space-Crew\include/game.hpp \
+ D:\CADT\Year2\Advance\ Algorithm\ and\ Data\ Structure\Final\ Project\Code\Space-Crew\include/player.hpp \
+ D:\CADT\Year2\Advance\ Algorithm\ and\ Data\ Structure\Final\ Project\Code\Space-Crew\include/LinkedList.hpp \
+ D:\CADT\Year2\Advance\ Algorithm\ and\ Data\ Structure\Final\ Project\Code\Space-Crew\include/Stack.hpp \
+ D:\CADT\Year2\Advance\ Algorithm\ and\ Data\ Structure\Final\ Project\Code\Space-Crew\include/map.hpp \
+ D:\CADT\Year2\Advance\ Algorithm\ and\ Data\ Structure\Final\ Project\Code\Space-Crew\include/bot.hpp \
+ D:\CADT\Year2\Advance\ Algorithm\ and\ Data\ Structure\Final\ Project\Code\Space-Crew\include/task_manager.hpp \
+ D:\CADT\Year2\Advance\ Algorithm\ and\ Data\ Structure\Final\ Project\Code\Space-Crew\include/bot_impl.hpp

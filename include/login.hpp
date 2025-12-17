@@ -254,7 +254,10 @@ public:
         ifstream file(userFile);
         if (!file) return false;
         
-        string line, savedName, savedHash, deleted, isAdmin;
+        string line;
+        getline(file, line); // Skip header row
+        
+        string savedName, savedHash, deleted, isAdmin;
 
         while (getline(file, line))
         {
@@ -279,7 +282,10 @@ public:
         ifstream file(userFile);
         if (!file) return false;
         
-        string line, savedName, savedHash, deleted, isAdmin;
+        string line;
+        getline(file, line); // Skip header row
+        
+        string savedName, savedHash, deleted, isAdmin;
 
         while (getline(file, line))
         {
@@ -426,8 +432,12 @@ public:
             return false;
         }
 
+        // Skip header row
+        string line;
+        getline(file, line);
+
         string hashedInput = sha256(pwd);
-        string line, savedName, savedHash, deleted, isAdmin;
+        string savedName, savedHash, deleted, isAdmin;
         bool found = false;
 
         while (getline(file, line))
